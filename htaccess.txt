@@ -1,0 +1,103 @@
+# Puesto al inicio de una línea, ignora esa línea.
+
+[F] Forbidden: prohíbe un acceso y fuerza un acceso denegado. 403 Forbidden.
+
+[L] Last rule: indica que es la última regla que debe aplicarse.
+
+[N] Next: indica continuación hasta que las directivas sean logradas.
+
+[G] Gone: indica al servidor que ya no existe, es decir, entrega "Gone".
+
+[P] Proxy: instruye al servidor para manejar los pedidos por mod_proxy.
+
+[C] Chain: encadena la regla actual con la regla anterior.
+
+[R] Redirect: indica redirección. Puede haber de varios tipos 301 (permanente), 302 (provisional).
+
+[NC] No Case: no sensible a mayúsculas, es decir, indica que no debe distinguirse entre mayúsculas y minúsculas.
+
+[PT] Pass Through: pasa el URL a Apache para seguir procesando.
+
+[OR] Or: indica que la expresión debe interpretase como una alternativa junto a la siguiente: ó lógico. Si se omite, se sobreentiende que es una y lógica, por defecto.
+
+[NE] No Escape: analiza las salidas de caracteres sin escapar.
+
+[NS] No Subrequest: para saltar directivas de sub-pedidos internos.
+
+[QSA] Append Query String: agrega un query string al final de la expresión (URL).
+
+[S=x] Skip: salta las siguientes "x" reglas del fichero .htaccess.
+
+[E=variable:value] Environmental Variable: para añadir un valor a una variable.
+
+[T=MIME-type] Mime Type: declara mime-type al recurso.
+
+[] dentro de los paréntesis se encierran carácteres que definen los resultados.
+
+[]+ se utiliza para hacer combinaciones.
+
+[^] excluye los carácteres que pongamos dentro del paréntesis. Ejemplo [^abc] excluye las letras a, b y c.
+
+[a-z] letras desde la a hasta la z (en minúsculas).
+
+[A-Z] letras desde la A hasta la Z (en mayúsculas).
+
+[a-zA-Z] sólo letras (mayúsculas y minúsculas).
+
+[a-z]{1,10} palabras en minúsculas entre 1 y 10 caracteres.
+
+[0-9] sólo un número.
+
+[0-9]{4} números de 4 cifras.
+
+(.*) cualquier expresión, incluida la vacía.
+
+a{n} especifica el número de caracteres.
+
+a{n,} especifica el número "o más" de caracteres.
+
+a{n,m} especifica un rango entre "n" y "m". Ejemplo s{3,6} será 3 "eses", 4 "eses", 5 "eses" o 6 "eses".
+
+() es un agrupamiento de caracteres.
+
+^ marca el inicio de un argumento.
+
+$ marca el fin de un argumento.
+
+? establece como opcional el caracter que le precede. Si se pone este símbolo al final del segundo argumento del RewriteRule, indicará que no se ponga nada más en la URL.
+
+! es la negación. Ejemplo: "!string" resulta "no string".
+
+. indica cualquier caracter arbitrario.
+
+- instrucción “not to”.
+
++ indica uno o más caracteres del caracter que le precede. Por ejemplo: (.+) indica cualquier cadena de uno o más caracteres.
+
+| es el ó lógico, condición de alternancia. Ejemplo (a|b) es el caracter a o el b.
+
+\ escapa caracteres, es decir, toma el caracter que le sigue literalmente. Por ejemplo: “\.” indica literalmente un punto, ya que sin la barra invertida indicaría cualquier caracter.
+
+/* indica cero o más "/".
+
+.* indica cualquier caracter, incluido que no exista caracter.
+
+^$ indica una cadena vacía.
+
+^.*$ indica "todo", toda la cadena.
+
+[^/.] define un caracter que no sea "/" ni ".".
+
+[^/.]+ define, ningún número de caracter que tenga "/" o ".".
+
+http:// es literalmente “http://”.
+
+^dominio.* define una cadena que comience con "dominio" y le siga cualquier número de caracteres.
+
+^dominio\.com$ define exactamente “dominio.com”.
+
+-d prueba si la cadena es un directorio existente.
+
+-f prueba si la cadena es un archivo existente.
+
+-s prueba si el archivo en la cadena no tiene valor cero.
